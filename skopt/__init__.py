@@ -29,7 +29,7 @@ except NameError:
 # Dev branch marker is: 'X.Y.dev' or 'X.Y.devN' where N is an integer.
 # 'X.Y.dev0' is the canonical version of 'X.Y.dev'
 #
-__version__ = "0.9.0"
+__version__ = "0.9.1"
 
 if __SKOPT_SETUP__:
     import sys
@@ -39,25 +39,15 @@ if __SKOPT_SETUP__:
 else:
     import platform
     import struct
-    from . import acquisition
-    from . import benchmarks
-    from . import callbacks
-    from . import learning
-    from . import optimizer
 
-    from . import space
-    from . import sampler
-    from .optimizer import dummy_minimize
-    from .optimizer import forest_minimize
-    from .optimizer import gbrt_minimize
-    from .optimizer import gp_minimize
-    from .optimizer import Optimizer
+    from . import (acquisition, benchmarks, callbacks, learning, optimizer,
+                   sampler, space)
+    from .optimizer import (Optimizer, dummy_minimize, forest_minimize,
+                            gbrt_minimize, gp_minimize)
     from .searchcv import BayesSearchCV
     from .space import Space
-    from .utils import dump
-    from .utils import expected_minimum
-    from .utils import expected_minimum_random_sampling
-    from .utils import load
+    from .utils import (dump, expected_minimum,
+                        expected_minimum_random_sampling, load)
     __all__ = (
         "acquisition",
         "benchmarks",
