@@ -271,7 +271,6 @@ class ExtraTreesRegressor(_sk_ExtraTreesRegressor):
         - If float, then `max_features` is a percentage and
           `int(max_features * n_features)` features are considered at each
           split.
-        - If "auto", then `max_features=n_features`.
         - If "sqrt", then `max_features=sqrt(n_features)`.
         - If "log2", then `max_features=log2(n_features)`.
         - If None, then `max_features=n_features`.
@@ -394,7 +393,7 @@ class ExtraTreesRegressor(_sk_ExtraTreesRegressor):
 
     def __init__(self, n_estimators=10, criterion='squared_error', max_depth=None,
                  min_samples_split=2, min_samples_leaf=1,
-                 min_weight_fraction_leaf=0.0, max_features='auto',
+                 min_weight_fraction_leaf=0.0, max_features=None,
                  max_leaf_nodes=None, min_impurity_decrease=0.,
                  bootstrap=False, oob_score=False,
                  n_jobs=1, random_state=None, verbose=0, warm_start=False,
