@@ -1,4 +1,5 @@
 try:
+    import skopt
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
@@ -13,7 +14,6 @@ except ImportError:
 # routine
 builtins.__SKOPT_SETUP__ = True
 
-import skopt
 
 VERSION = skopt.__version__
 
@@ -32,7 +32,7 @@ CLASSIFIERS = ['Intended Audience :: Science/Research',
                'Programming Language :: Python :: 3.8']
 
 
-setup(name='scikit-optimize',
+setup(name='minitrade-scikit-optimize',
       version=VERSION,
       description='Sequential model-based optimization toolbox.',
       long_description=open('README.rst').read(),
